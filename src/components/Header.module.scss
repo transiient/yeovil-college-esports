@@ -13,6 +13,8 @@
     min-height: 64px;
     box-sizing: border-box;
 
+    box-shadow: $box_shadow_light;
+
     transition: $transition_time_link;
 
     // .collapsibleNav gets pushed over by .ycLogo - this recenters it by offsetting the logo width
@@ -20,27 +22,31 @@
     &.scrolled .collapsibleNav ul { margin-left: -48px; }
 
     .collapsibleNav {
+        height: 100%;
         margin: 0 auto 0 auto;
     
         ul {
+            height: 100%;
             transition: $transition_time_link;
         }
 
         ul li {
             display: inline-block;
-    
+
             transition: $transition_time_link;
-    
+
             a {
+                height: 100%;
                 padding: 8px 16px;
-    
+
                 color: $color_white;
-    
+
                 cursor: pointer;
                 text-transform: uppercase;
             }
-    
+
             &:hover a {
+                background-color: $color_white;
                 color: $color_ycblue;
             }
         }
@@ -49,11 +55,15 @@
     &.scrolled {
         min-height: 36px;
 
-        background-color: rgba(0,0,0,0.85);
+        background-color: transparentize($color: #1A3663, $amount: 0.2);
 
         .ycLogo {
             width: 32px;
             height: 32px;
+        }
+
+        .collapsibleNav ul li a {
+            padding: 16px;
         }
     }
 }
@@ -118,7 +128,7 @@
     height: 48px;
     margin: 8px;
 
-    background-image: url('/assets/images/yclogo_white.png');
+    background-image: url('../assets/images/yclogo_white.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
