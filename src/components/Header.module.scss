@@ -1,0 +1,188 @@
+@import '../Variables.scss';
+
+.wrapper {
+    position: fixed;
+    z-index: 998;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    min-width: 100%;
+    min-height: 64px;
+    box-sizing: border-box;
+
+    transition: $transition_time_link;
+
+    // .collapsibleNav gets pushed over by .ycLogo - this recenters it by offsetting the logo width
+    .collapsibleNav ul { margin-left: -64px; }
+    &.scrolled .collapsibleNav ul { margin-left: -48px; }
+
+    .collapsibleNav {
+        margin: 0 auto 0 auto;
+    
+        ul {
+            transition: $transition_time_link;
+        }
+
+        ul li {
+            display: inline-block;
+    
+            transition: $transition_time_link;
+    
+            a {
+                padding: 8px 16px;
+    
+                color: $color_white;
+    
+                cursor: pointer;
+                text-transform: uppercase;
+            }
+    
+            &:hover a {
+                color: $color_ycblue;
+            }
+        }
+    }
+
+    &.scrolled {
+        min-height: 36px;
+
+        background-color: rgba(0,0,0,0.85);
+
+        .ycLogo {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+.menuOpen {
+    background-color: $color_ycblue;
+
+    .menuButton {
+        div {
+            background-color: $color_white;
+        }
+        :global(#bar1) {
+            width: 8px;
+            margin-left: 16px;
+        }
+        :global(#bar2) {
+            width: 16px;
+            margin-left: 8px;
+        }
+        :global(#bar3) {
+            width: 24px;
+            margin-left: 0;
+        }
+
+        &:hover div {
+            background-color: $color_white;
+        }
+    }
+
+    .collapsibleNav {
+        flex-basis: 100%;
+        flex: 1;
+
+        display: inline-block;
+
+        min-width: 100%;
+        max-height: 100%;
+
+        padding: 0;
+
+        ul {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(auto-fit, 1fr);
+
+            margin: 0;
+
+            li a {
+                width: 100%;
+                padding: 16px;
+
+                &:hover {
+                    background: $color_white;
+                }
+            }
+        }
+    }
+}
+
+.ycLogo {
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    margin: 8px;
+
+    background-image: url('/assets/images/yclogo_white.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: $transition_time_link;
+}
+
+.menuButton {
+    display: none;
+
+    padding: 16px;
+    margin: 8px;
+
+    div {
+        width: 24px;
+        height: 2px;
+
+        background-color: $color_white;
+
+        transition: $transition_time_link;
+    }
+    :global(#bar2) {
+        margin: 5px 0;
+    }
+
+    &:hover {
+        div {
+            background-color: $color_ycblue;
+        }
+        :global(#bar1) {
+            width: 24px;
+            margin-left: 0;
+        }
+        :global(#bar2) {
+            width: 16px;
+            margin-left: 8px;
+        }
+        :global(#bar3) {
+            width: 8px;
+            margin-left: 16px;
+        }
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    .wrapper {
+        justify-content: space-between;
+
+        // todo: clean up
+        &.scrolled {
+            background-color: $color_ycblue;
+
+            .collapsibleNav ul {
+                margin: 0;
+            }
+        }
+    }
+
+    .menuButton {
+        display: inline-block;
+    }
+
+    .collapsibleNav {
+        display: none;//todo: find more elegant solution which allows menu to slide down
+        max-height: 0;
+    }
+}

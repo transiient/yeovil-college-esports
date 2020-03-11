@@ -1,0 +1,78 @@
+@import '../Variables.scss';
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $color_grey;
+
+    .flex {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .copyright {
+        margin: 16px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+}
+
+.ycLogo {
+    height: 64px;
+    width: 64px;
+
+    margin: 0 16px;
+
+    background-image: url('/assets/images/yclogo_blue.png');
+    background-size: contain;
+}
+.ofstedBadge {
+    height: 64px;
+    width: 64px;
+
+    margin: 0 16px;
+
+    background-image: url('/assets/images/yclogo_blue.png');
+    background-size: contain;
+}
+
+nav {
+    margin: 32px 0;
+
+    li {
+        display: inline-block;
+    }
+
+    li a {
+        display: inline-block;
+
+        padding: 16px;
+    }
+}
+
+@media only screen and (max-width: $media_screen_max_width) {
+    footer .flex {
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            margin: 16px 16px;
+
+            li {
+                width: 100%;
+                border-bottom: 2px solid rgba(0,0,0,0.05);
+
+                text-align: center;
+            }
+            li:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+}

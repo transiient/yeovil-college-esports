@@ -1,0 +1,116 @@
+@import './Variables.scss';
+
+html {
+    // Scrollbar Styles
+    //  Custom page scrollbar only displayed on devices above
+    //  $media_screen_max_width, otherwise the bar takes up
+    //  space on the page, and it feels cluttered.
+    @media only screen and (min-width: $media_screen_max_width) {
+        &::-webkit-scrollbar {
+            width: 11px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: $color_black;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $color_ycblue;
+            border-radius: 4px;
+            border: 2px solid $color_black;
+        }
+    }
+    // Applies to nested scrollbars
+    scrollbar-width: thin;
+    scrollbar-color: $color_ycblue $color_black;
+}
+
+body {
+    overflow-x: hidden; //! remove X-axis scrollbar, idk why it's there anyway
+
+    font-family: $fonts_body;
+    font-size: 16px;
+
+    background-color: $color_white;
+}
+
+* {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Chrome, Opera, Firefox */
+}
+p, i:not(.material-icons), b, li:not(.noselect) {
+    -webkit-touch-callout: default;
+    -webkit-user-select: text;
+        -ms-user-select: text;
+            user-select: text;
+}
+
+a {
+    display: inline-block;
+    color: $color_foreground;
+    text-decoration: none;
+
+    transition: $transition_time_link;
+
+    &.inlineLink {
+        &:hover {
+            color: $color_ycblue;
+        }
+    }
+}
+
+h1 {
+    font-family: $fonts_heading;
+    font-size: 3em;
+
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: $fonts_heading;
+    font-size: 2.4em;
+
+    text-transform: uppercase;
+
+    color: $color_ycblue;
+    // todo: just testing this
+    // transform: skew(0, -2deg);
+}
+
+h3 {
+    font-size: 1.2em;
+
+    line-height: 1.4em;
+
+    text-transform: uppercase;
+
+    color: $color_grey_dark;
+}
+
+h4 {
+    font-family: $fonts_heading;
+    font-size: 1.2em;
+
+    text-transform: uppercase;
+}
+
+p {
+    max-width: 80ch;
+    margin: 0 auto; //todo: this might need modifying as it could break appearance of some text content
+
+    line-height: 1.2em;
+
+    &.extraLineSpacing {
+        line-height: 1.4em;
+    }
+}
+
+b {
+    font-weight: bold;
+}
+.blue {
+    color: $color_ycblue;
+}
+.teal {
+    color: $color_teal;
+}

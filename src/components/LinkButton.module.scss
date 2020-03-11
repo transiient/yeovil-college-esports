@@ -1,0 +1,35 @@
+@import '../Variables.scss';
+
+.container {
+    display: inline-block;
+
+    a {
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 16px;
+
+        background-color: $color_ycblue;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+        text-align: center;
+        color: $color_white;
+        text-transform: uppercase;
+
+        transition: $transition_time_link;
+
+        &:hover {
+            background-color: lighten($color_ycblue, 8%);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        }
+    }
+
+    &.colourWhite a {
+        background-color: $color_white;
+    
+        color: $color_ycblue;
+    
+        &:hover {
+            background-color: $color_white;
+        }
+    }
+}
