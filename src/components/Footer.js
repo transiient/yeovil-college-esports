@@ -7,7 +7,7 @@ import cn from './Footer.module.scss';
 function NavLink(props) {
     return (
         <li className={cn.navLink}>
-            <a className="inlineLink" href={props.to} rel="noopener noreferrer" target="_blank">
+            <a className="" href={props.to} rel="noopener noreferrer" target="_blank">
                 {props.children}
             </a>
         </li>

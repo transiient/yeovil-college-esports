@@ -51,6 +51,13 @@ nav {
         display: inline-block;
 
         padding: 16px;
+
+        color: $color_ycblue;
+
+        transition: $transition_time_link;
+    }
+    li:hover a {
+        color: $color_black;
     }
 }
 
