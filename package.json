@@ -1,6 +1,7 @@
 {
   "name": "15_2-yc-esports",
   "version": "0.1.0",
+  "homepage": "https://sam-cross.github.io/yeovil-college-esports",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
