@@ -1,12 +1,24 @@
 import React, { useEffect } from 'react';
 import { Element, Link as SLink } from 'react-scroll';
+import ImageCarousel from '../components/ImageCarousel';
 import classnames from 'classnames';
 
 import LinkButton from '../components/LinkButton';
-import ImageCarousel from '../components/ImageCarousel';
 
 import '../App.scss';
 import cn from './Home.module.scss';
+
+// Images
+import IMAGE_COURSE from '../assets/images/jefferson-santos-9SoCnyQmkzI-unsplash.jpg';
+import IMAGE_SUBJECT from '../assets/images/florian-olivo-Mf23RF8xArY-unsplash.jpg';
+// -- Deck
+import IMAGE_DECK_01 from '../assets/images/two-white-hyperx-ram-stick-2582928.jpg';
+import IMAGE_DECK_02 from '../assets/images/constant-loubier-7lzIyp2Ork4-unsplash.jpg';
+import IMAGE_DECK_03 from '../assets/images/two-white-hyperx-ram-stick-2582928.jpg';
+import IMAGE_DECK_04 from '../assets/images/constant-loubier-7lzIyp2Ork4-unsplash.jpg';
+import IMAGE_DECK_05 from '../assets/images/two-white-hyperx-ram-stick-2582928.jpg';
+import IMAGE_DECK_06 from '../assets/images/constant-loubier-7lzIyp2Ork4-unsplash.jpg';
+
 
 function ScrollIndicator(props) {
     return (
@@ -17,10 +29,10 @@ function ScrollIndicator(props) {
                 smooth={true}
                 offset={-128}
                 duration={600}>
-                    <i className="material-icons">arrow_downward</i>
-                </SLink>
+                <i className="material-icons">arrow_downward</i>
+            </SLink>
         </div>
-    )
+    );
 }
 
 export default function Home(props) {
@@ -50,7 +62,7 @@ export default function Home(props) {
 
                         <LinkButton className={cn.linkButton} type="external" newtab href="http://yeovil.ac.uk/our-courses/?coursess=esports" colour="blue">Enrol Now</LinkButton>
                     </div>
-                    
+
                     <ScrollIndicator />
                 </div></div>
             </div></Element>
@@ -58,14 +70,14 @@ export default function Home(props) {
             <Element id="section-course" name="section-course"><div className="sectionCourse">
                 <div className={classnames(cn.hero, cn.heroImageLeft)}><div className={cn.heroInnerWrapper}>
                     <div className={classnames(cn.heroImage, cn.heroImageWithButton)}>
-                        <img src="https://picsum.photos/800/460" alt="People looking cheerful while examining work on a desk" />
+                        <img src={IMAGE_COURSE} alt="People looking cheerful while examining work on a desk" />
 
                         <LinkButton className={classnames(cn.linkButton, cn.linkButtonExpandsOverImage)}
                             type="external"
                             newtab
                             href="http://yeovil.ac.uk/our-courses/?coursess=esports"
                             colour="blue">
-                                Enrol - Save your place
+                            Enrol - Save your place
                         </LinkButton>
                     </div>
 
@@ -98,7 +110,7 @@ export default function Home(props) {
             <Element id="section-subject" name="section-subject"><div className="sectionSubject">
                 <div className={classnames(cn.hero, cn.heroImageRight, cn.heroBlack)}><div className={cn.heroInnerWrapper}>
                     <div className={classnames(cn.heroImage)}>
-                        <img src="https://picsum.photos/800/460" alt="People looking cheerful while examining work on a desk" />
+                        <img src={IMAGE_SUBJECT} alt="People looking cheerful while examining work on a desk" />
                     </div>
 
                     <div className={cn.sectionHeader}>
@@ -183,14 +195,14 @@ export default function Home(props) {
 
                     <div className={cn.contentWrapper}>
                         <ImageCarousel
-                            className={cn.imageCarousel}
+                            cssClass={cn.imageCarouselWrapper}
                             images={[
-                                { src: "https://picsum.photos/1280/720", alt: "" },
-                                { src: "https://picsum.photos/1280/720", alt: "" },
-                                { src: "https://picsum.photos/1280/720", alt: "" },
-                                { src: "https://picsum.photos/1280/720", alt: "" },
-                                { src: "https://picsum.photos/1280/720", alt: "" },
-                                { src: "https://picsum.photos/1280/720", alt: "" }
+                                { source: IMAGE_DECK_01, altText: "a" },
+                                { source: IMAGE_DECK_02, altText: "b" },
+                                { source: IMAGE_DECK_03, altText: "c" },
+                                { source: IMAGE_DECK_04, altText: "d" },
+                                { source: IMAGE_DECK_05, altText: "e" },
+                                { source: IMAGE_DECK_06, altText: "f" }
                             ]}
                         />
 
@@ -241,5 +253,5 @@ export default function Home(props) {
                 </div></div>
             </div></Element>
         </div>
-    )
+    );
 }

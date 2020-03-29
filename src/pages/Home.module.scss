@@ -54,23 +54,23 @@
         align-items: center;
 
         height: 100%;
-        margin: 64px 16px;
+        margin: 0 16px 64px 16px;
 
         h2 {
             margin: 16px;
         }
 
         h3 {
-            margin: 0 0 32px 0;
+            margin: 0 0 16px 0;
         }
 
-        .imageCarousel {
-            display: none;
-            margin: 0 32px;
+        .imageCarouselWrapper {
+            max-height: 420px;
+            margin: 16px 32px;
         }
 
         p {
-            margin: 32px 0;
+            margin: 16px 0 32px 0;
 
             text-align: center;
 

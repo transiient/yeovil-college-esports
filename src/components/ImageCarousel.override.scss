@@ -1,0 +1,23 @@
+@import '../Variables.scss';
+
+.imageCarouselOverride {
+    .carousel {
+        .carousel-status {
+            display: none;
+        }
+
+        .control-arrow::before {
+            margin: 0 24px;
+        }
+
+        .control-dots .dot {
+            box-shadow: 2px 0 4px rgba(0, 0, 0, 0.2);
+
+            border-radius: 0;
+
+            &.selected {
+                background-color: $color_ycblue;
+            }
+        }
+    }
+}
