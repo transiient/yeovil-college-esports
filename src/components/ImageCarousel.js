@@ -42,4 +42,3 @@ ImageCarousel.propTypes = {
 };
 
 export default ImageCarousel;
-
