@@ -25,6 +25,9 @@ function LinkButton(props) {
 
 LinkButton.propTypes = {
     href: PT.string.isRequired,
+    colour: PT.string,
+    classNames: PT.string,
+    newtab: PT.bool,
     children: PT.any
 };
 
