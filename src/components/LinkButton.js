@@ -1,11 +1,12 @@
 import React from 'react';
+import PT from 'prop-types';
 import classnames from 'classnames';
 
 import cn from './LinkButton.module.scss';
 
-export default function LinkButton(props) {
+function LinkButton(props) {
     let _colourClass;
-    switch(props.colour) {
+    switch (props.colour) {
         case "white":
             _colourClass = cn.colourWhite;
             break;
@@ -19,5 +20,12 @@ export default function LinkButton(props) {
                 {props.children}
             </a>
         </div>
-    )
+    );
 }
+
+LinkButton.propTypes = {
+    href: PT.string.isRequired,
+    children: PT.any
+};
+
+export default LinkButton;
