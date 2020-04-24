@@ -1,100 +1,25 @@
-@import '../Variables.scss';
-
-.fullpage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    max-width: 100%;
-
-    padding: 0;
-    min-height: 100vh;
-
-    &.fullpagePadBottom {
-        padding: 0 0 120px 0;
-    }
-
-    // &.stretchy {
-    //     justify-content: flex-start;
-    // }
-
-    .containerCenter {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        margin: 0 auto;
-    
-        padding: 16px;
-    
-        h1 {
-            margin-bottom: 16px;
-    
-            text-align: center;
-    
-            color: $color_white;
-        }
-    
-        h3 {
-            text-align: center;
-        }
-    
-        .linkButton {
-            margin-top: 36px;
-        }
-    }
-
-    .contentWrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        height: 100%;
-        margin: 0 16px 64px 16px;
-
-        h2 {
-            margin: 16px;
-        }
-
-        h3 {
-            margin: 0 0 16px 0;
-        }
-
-        .imageCarouselWrapper {
-            max-height: 420px;
-            margin: 16px 32px;
-        }
-
-        p {
-            margin: 16px 0 32px 0;
-
-            text-align: center;
-
-            color: $color_white;
-        }
-    }
-}
+@import "../Variables.scss";
 
 .IMGbg1 {
-    background-image: url('../assets/images/emmanuel-WcrqKjgMPfI-unsplash.jpg');
+    background-image: url("../assets/images/emmanuel-WcrqKjgMPfI-unsplash.jpg");
     background-size: cover;
 }
+
 .IMGbg2 {
-    background-image: url('../assets/images/constant-loubier-7lzIyp2Ork4-unsplash.jpg');
+    background-image: url("../assets/images/constant-loubier-7lzIyp2Ork4-unsplash.jpg");
     background-size: cover;
 }
+
 .IMGbg3 {
-    background-image: url('../assets/images/jodyhongfilms-sI1mbxJFFpU-unsplash.jpg');
+    background-image: url("../assets/images/jodyhongfilms-sI1mbxJFFpU-unsplash.jpg");
     background-size: cover;
     background-position: center;
 }
+
 .bgOverlayBlack {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
+
 .bgOverlayBlue {
     background-color: transparentize($color: $color_ycblue, $amount: 0.2);
 }
@@ -104,13 +29,34 @@
         padding: 16px;
         opacity: 0.2;
     }
+
     50% {
         padding: 24px 16px 8px 16px;
         opacity: 1;
     }
+
     100% {
         padding: 16px;
         opacity: 0.2;
+    }
+}
+
+.sectionHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 32px 16px;
+
+    text-align: center;
+
+    h2 {
+        margin-bottom: 32px;
+    }
+
+    p {
+        max-width: 44ch;
     }
 }
 
@@ -128,69 +74,183 @@
         animation: scrollIndicatorAnim 2s ease-in-out infinite;
     }
 
-    &.hidden { opacity: 0; }
+    &.hidden {
+        opacity: 0;
+    }
 }
 
-.hero {
+// Content wrapper for content inside elements
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin: 64px 0;
+
+    &.noTopMargin {
+        margin: 0 0 64px 0;
+    }
+
+    p {
+        margin: 0 0 32px 0;
+        padding: 0 32px;
+
+        text-align: center;
+    }
+
+    .imageContainer {
+        width: 100%;
+
+        img {
+            display: inline-block;
+
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+        }
+    }
+
+    .buttonContainer {
+        .linkButton {
+            margin: 16px;
+        }
+    }
+}
+
+// Wrapper for landing element
+.landingWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     max-width: 100%;
 
-    .heroInnerWrapper {
+    padding: 0 0 120px 0;
+    min-height: 100vh;
+
+    .landingContent {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 32px;
+
+        h1 {
+            margin: 0 0 16px 0;
+
+            text-align: center;
+
+            color: $color_white;
+        }
+
+        h3 {
+            margin: 0 0 32px 0;
+            text-align: center;
+        }
+    }
+}
+
+// Wrapper for hero element
+.heroWrapper {
+    width: 100%;
+
+    // Inner content container for the hero
+    .heroContainer {
         display: grid;
         grid-template-columns: minmax(0, 1fr) 1fr;
         grid-template-rows: repeat(2, auto-fit);
         box-sizing: border-box;
 
-        max-width: 1280px; //todo: consider changing to fit 4k screens nicer
-        padding: 0 16px 64px 16px; // 128px to cater for next hero's image
-        margin: 0 auto; // center
+        max-width: 1280px; // todo: consider increasing on 4K displays
+        margin: 0 auto; // center the hero container
+        padding: 0 16px 64px 16px; // 64px to cater for next hero image overlap
+
+        &.noBottomPadding {
+            padding: 0 16px;
+        }
     }
 
+    // -- Image alignments
     &.heroImageLeft {
-        .heroImage { grid-area: 1 / 1 / 2 / 2; }
-        .sectionHeader { grid-area: 1 / 2 / 2 / 3; }
-        .heroContentWrapper { grid-area: 2 / 1 / 3 / 3; }
+        .heroImageWrapper {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .sectionHeader {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+
+        .contentWrapper {
+            grid-area: 2 / 1 / 3 / 3;
+        }
     }
+
     &.heroImageRight {
-        // row-s col-s row-e col-e
-        .heroImage { grid-area: 1 / 2 / 2 / 3; }
-        .sectionHeader { grid-area: 1 / 1 / 2 / 2; }
-        .heroContentWrapper { grid-area: 2 / 1 / 3 / 3; }
-    }
-    &.heroImageCenter {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(2, auto-fit);
-        .sectionHeader { grid-area: 1 / 1 / 2 / 2; }
-        .heroContentWrapper { grid-area: 2 / 1 / 3 / 2; }
+        .heroImageWrapper {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+
+        .sectionHeader {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .contentWrapper {
+            grid-area: 2 / 1 / 3 / 3;
+        }
     }
 
-    &.heroBlack {
+    &.heroNoImage {
+        .sectionHeader {
+            grid-area: 1 / 1 / 2 / 3;
+        }
+
+        .contentWrapper {
+            grid-area: 2 / 1 / 3 / 3;
+        }
+    }
+    // -- End of image alignments
+
+    // Dark style
+    &.heroDark {
         background-color: $color_black;
-        color: $color_white;
-    }
 
-    &.textWhite {
-        h2, p {
+        h1,
+        h2,
+        h3 {
+            color: lighten($color_ycblue, 32%);
+        }
+        p {
             color: $color_white;
         }
     }
 
-    .heroImage {
+    // Hero image container
+    .heroImageWrapper {
         display: flex;
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
 
         max-height: 320px;
-        max-width: 100%;
+        width: 100%;
         margin: -64px 0 0 0; // margin: 0; pins element edges to parent edges
 
-        box-shadow: 0 0 16px rgba(0,0,0,0.4);
+        box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
+
+        transition: $transition_time_movement;
 
         .linkButton a {
             width: 100%;
 
             box-shadow: none;
-            &:hover { box-shadow: none; }
+
+            &:hover {
+                box-shadow: none;
+            }
         }
 
         img {
@@ -200,157 +260,194 @@
             max-width: 100%;
         }
     }
+}
 
-    .heroContentWrapper {
+// Outer wrapper for the section
+.sectionWrapper {
+    width: 100%;
+
+    // Inner content container
+    .sectionContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, max-content);
+        box-sizing: border-box;
+
+        max-width: 1280px; // todo: consider increasing on 4K displays
+        margin: 0 auto; // center the hero container
+        padding: 0 16px 0 16px;
+
+        .contentWrapper p {
+            margin: 32px 0;
+        }
+    }
+}
+
+/* Other element styles */
+ul.listGrid {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: repeat(auto-fit 1fr);
+
+    max-width: max-content; // shouldn't have to do this, but alas, I must.
+    margin: 0 auto;
+
+    li {
+        box-sizing: border-box;
+
+        padding: 8px 24px 8px 8px;
+        border-bottom: 2px solid $color_grey;
+        font-weight: bold;
+
+        &:nth-last-child(-n + 2) {
+            border-bottom: none; //![last row border] if @media query is updated, this should be double-checked
+        }
+    }
+}
+
+ul.flexRelevantUnits {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    .subjectTile {
+        position: relative;
+
         display: flex;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        justify-content: flex-start;
 
-        padding: 64px 0;
-        &.noTopMargin { padding: 0 0 64px 0; }
+        padding: 32px 16px;
+        margin: 8px;
+        max-width: 320px;
+
+        text-align: center;
+
+        color: white;
+
+        &.fruGreen {
+            background-color: $color_green;
+        }
+
+        &.fruLilac {
+            background-color: $color_lilac;
+        }
+
+        &.fruOrange {
+            background-color: $color_orange;
+        }
+
+        &.fruBlue {
+            background-color: $color_blue;
+        }
+
+        &.fruBrown {
+            background-color: $color_brown;
+        }
+
+        h4 {
+            margin-bottom: 16px;
+        }
 
         p {
-            margin: 0 auto 64px auto;
-            padding: 0 32px;
-
-            text-align: center;
+            padding: 0 16px 0 16px;
+            margin: 0;
         }
 
-        // todo:
-        // make each element in this grid aligned vertically, eg:
-        /*
-            | Item one                  | Item six
-            | Item two is long          | Item seven is long
-            | Three                     | Item eight
-            | Item four is even longer  | Item nine
-            | Item five                 | Item X
-        */
-        // collapse to list on small screen sizes
-        // this should be possible with flex but i cannot figure it out yet
-        ul.listGrid {
-            display: grid;
-            grid-template-columns: repeat(2, max-content);
-            grid-template-rows: repeat(auto-fit 1fr);
+        .fruContainer {
+            .fruInterest {
+                position: relative;
 
-            max-width: max-content; // shouldn't have to do this, but alas, I must.
-            margin: 0 auto;
-    
-            li {
-                box-sizing: border-box;
-
-                padding: 8px 24px 8px 8px;
-                border-bottom: 2px solid $color_grey;
-                font-weight: bold;
-
-                &:nth-last-child(-n+2) {
-                    border-bottom: none; //![last row border] if @media query is updated, this should be double-checked
-                }
+                transition: $transition_time_link;
             }
-        }
 
-        ul.flexRelevantUnits {
-            display: flex;
-            justify-content: center;
-            align-items: stretch;
-            flex-wrap: wrap;
-
-            li {
+            .fruUnits {
+                position: absolute;
+                top: 0;
+                left: 0;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
 
-                padding: 32px 16px;
-                margin: 8px;
-                max-width: 320px;
+                width: 100%;
+                height: 100%;
 
-                text-align: center;
+                opacity: 0;
+                transform: scale(0.9);
 
-                color: white;
-                
-                &.fruGreen { background-color: $color_green; }
-                &.fruLilac { background-color: $color_lilac; }
-                &.fruOrange { background-color: $color_orange; }
-                &.fruBlue { background-color: $color_blue; }
-                &.fruBrown { background-color: $color_brown; }
+                transition: $transition_time_link;
+            }
 
-                h4 {
-                    margin-bottom: 16px;
-
-                    &.fruInterest {}
-                    &.fruUnits {}
+            &:hover {
+                .fruInterest {
+                    opacity: 0;
+                    transform: scale(1.1);
                 }
-
-                p {
-                    padding: 0 16px 0 16px;
-                    margin: 0;
-                }
-
                 .fruUnits {
-                    display: none;
-                }
-
-                ul.fruUnits {
-                    li {
-                        padding: 0;
-                    }
+                    opacity: 1;
+                    transform: scale(1);
                 }
             }
-        }
-
-        .buttons div {
-            margin: 0 16px;
         }
     }
 }
 
-.sectionHeader {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.imageCarousel {
+    height: auto;
+    width: calc(100vw - 32px);
+    max-height: 480px;
+    max-width: 720px;
 
-    padding: 48px 16px;
-
-    text-align: center;
-
-    h2 {
-        margin-bottom: 32px;
-    }
-
-    p {
-        max-width: 44ch;
-    }
+    margin: auto;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: $media_screen_max_width) {
-    .hero { // For some reason, this nesting is required, and it won't properly
-        // set the grid-area for heroImageLeft/Right if it's not done
-        // this way. The weird quirks of CSS, or just me? Who knows...
-        .heroInnerWrapper {
-            grid-template-columns: 1fr;
-            grid-template-rows: repeat(3, auto-fit);
+    .contentWrapper {
+        margin: 0 0 32px 0;
 
-            .heroContentWrapper {
-                padding: 0;
-                margin: 0 0 64px 0;
+        &:before {
+            display: inline-block;
+
+            background-color: $color_grey_dark;
+
+            height: 2px;
+            width: 32px;
+
+            margin: 0 auto;
+        }
+    }
+    .heroWrapper {
+        &.heroImageLeft,
+        &.heroImageRight {
+            .heroImageWrapper {
+                grid-area: 1 / 1 / 2 / 2;
             }
 
-            ul.listGrid {
-                grid-template-columns: 1fr;
+            .sectionHeader {
+                grid-area: 2 / 1 / 3 / 2;
+            }
 
-                li {
-                    border-bottom: none;
-                    border-left: 2px solid $color_grey;
-                }
+            .contentWrapper {
+                grid-area: 3 / 1 / 4 / 2;
             }
         }
 
-        &.heroImageLeft, &.heroImageRight {
-            .heroImage { grid-area: 1 / 1 / 2 / 2; }
-            .sectionHeader { grid-area: 2 / 1 / 3 / 2; }
-            .heroContentWrapper { grid-area: 3 / 1 / 4 / 2; } // not working
+        .heroContainer {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, auto-fit);
+        }
+
+        ul.listGrid {
+            grid-template-columns: 1fr;
+
+            li {
+                border-bottom: none;
+                border-left: 2px solid $color_grey;
+            }
         }
     }
 }

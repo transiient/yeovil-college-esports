@@ -1,25 +1,26 @@
 $color_foreground: #191919;
 $color_background: #fafafa;
 
-$color_white: #FAFAFA;
+$color_white: #fafafa;
 $color_black: #191919;
-$color_grey: #DADADA;
+$color_grey: #dadada;
 $color_grey_dark: rgb(116, 117, 136);
-$color_ycblue: #21447C;
-$color_purple: #736EAB;
-$color_teal: #27C9A2;
+$color_ycblue: #21447c;
+$color_purple: #736eab;
+$color_teal: #27c9a2;
 
-$color_green: #56D763;
-$color_lilac: #A952D1;
-$color_orange: #EC712C;
-$color_blue: #5F6DEB;
-$color_brown: #BE4E1E;
+$color_green: #56d763;
+$color_lilac: #a952d1;
+$color_orange: #ec712c;
+$color_blue: #5f6deb;
+$color_brown: #be4e1e;
 
-$transition_time_link: .14s;
+$transition_time_link: 0.14s;
+$transition_time_movement: 0.19s;
 
 $fonts_heading: "Fugaz One", "Roboto", "Open Sans", sans-serif;
 $fonts_body: "Nunito", "Roboto", "Open Sans", sans-serif;
 
-$box_shadow_light: 0 4px 8px rgba(0,0,0,0.2);
+$box_shadow_light: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 $media_screen_max_width: 640px;

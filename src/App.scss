@@ -1,4 +1,4 @@
-@import './Variables.scss';
+@import "./Variables.scss";
 
 html {
     // Scrollbar Styles
@@ -35,14 +35,17 @@ body {
 * {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Chrome, Opera, Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Chrome, Opera, Firefox */
 }
-p, i:not(.material-icons), b, li:not(.noselect) {
+p,
+i:not(.material-icons),
+b,
+li:not(.noselect) {
     -webkit-touch-callout: default;
     -webkit-user-select: text;
-        -ms-user-select: text;
-            user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 a {
@@ -73,8 +76,10 @@ h2 {
     text-transform: uppercase;
 
     color: $color_ycblue;
-    // todo: just testing this
-    // transform: skew(0, -2deg);
+
+    &.white {
+        color: white;
+    }
 }
 
 h3 {
@@ -102,6 +107,12 @@ p {
 
     &.extraLineSpacing {
         line-height: 1.4em;
+    }
+    &.grey {
+        color: darken(white, 19%);
+    }
+    &.white {
+        color: white;
     }
 }
 

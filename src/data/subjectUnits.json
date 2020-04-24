@@ -1,0 +1,47 @@
+[
+    {
+        "colour": "green",
+        "heading": "Strategy",
+        "description": "Various gaming and coaching strategies will take your team to the finals, securing your victory",
+        "relevantUnits": [
+            "Short name",
+            "Longer unit name"
+        ]
+    },
+    {
+        "colour": "lilac",
+        "heading": "Tactics",
+        "description": "Great leadership and support skills will pin your team to the top of the leaderboard and make you undefeatable",
+        "relevantUnits": [
+            "Short name",
+            "Longer unit name"
+        ]
+    },
+    {
+        "colour": "orange",
+        "heading": "Considerations",
+        "description": "Learning what game designers consider when creating games can encourage you to think out-of-the-box during play",
+        "relevantUnits": [
+            "Short name",
+            "Longer unit name"
+        ]
+    },
+    {
+        "colour": "blue",
+        "heading": "Production",
+        "description": "Video production, livestreaming, and other media production skills will enable you to stand out in the modern world",
+        "relevantUnits": [
+            "Short name",
+            "Longer unit name"
+        ]
+    },
+    {
+        "colour": "brown",
+        "heading": "Business",
+        "description": "Your business and entrepreneurship skills will allow you to create a profitable business out of your team",
+        "relevantUnits": [
+            "Short name",
+            "Longer unit name"
+        ]
+    }
+]
