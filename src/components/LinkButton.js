@@ -15,7 +15,7 @@ function LinkButton(props) {
     }
 
     return (
-        <div className={classnames(cn.container, _colourClass, props.className)}>
+        <div className={classnames(cn.container, _colourClass, props.classNames)}>
             <a href={props.href} rel="noopener noreferrer" target={props.newtab ? "_blank" : ""}>
                 {props.children}
             </a>
