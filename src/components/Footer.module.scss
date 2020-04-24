@@ -1,17 +1,43 @@
 @import '../Variables.scss';
 
-footer {
+.footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: $color_grey;
 
-    .flex {
+    .linkWrapper {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 32px 0;
+
+            li {
+                display: inline-block;
+            }
+
+            li a {
+                display: inline-block;
+
+                padding: 8px 16px;
+
+                color: $color_ycblue;
+
+                transition: $transition_time_link;
+            }
+
+            li:hover a {
+                color: $color_black;
+            }
+        }
     }
 
     .copyright {
@@ -19,64 +45,48 @@ footer {
         font-size: 12px;
         font-weight: bold;
     }
-}
 
-.ycLogo {
-    height: 64px;
-    width: 64px;
+    .ycLogo {
+        height: 64px;
+        width: 64px;
 
-    margin: 0 16px;
+        margin: 0 16px;
 
-    background-image: url('../assets/images/yclogo_blue.png');
-    background-size: contain;
-}
-.ofstedBadge {
-    height: 64px;
-    width: 64px;
-
-    margin: 0 16px;
-
-    background-image: url('../assets/images/yclogo_blue.png');
-    background-size: contain;
-}
-
-nav {
-    margin: 32px 0;
-
-    li {
-        display: inline-block;
-    }
-
-    li a {
-        display: inline-block;
-
-        padding: 16px;
-
-        color: $color_ycblue;
+        background-image: url('../assets/images/yclogo_blue.png');
+        background-size: contain;
 
         transition: $transition_time_link;
+
+        &:hover {
+            filter: brightness(0%);
+        }
     }
-    li:hover a {
-        color: $color_black;
+
+    .ofstedBadge {
+        height: 64px;
+        width: 64px;
+
+        margin: 0 16px;
+
+        background: grey;
+        // background-image: url('../assets/images/yclogo_blue.png');
+        background-size: contain;
     }
 }
 
 @media only screen and (max-width: $media_screen_max_width) {
-    footer .flex {
-        nav {
-            display: flex;
+    .footer {
+        .linkWrapper ul {
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
             margin: 16px 16px;
 
             li {
                 width: 100%;
-                border-bottom: 2px solid rgba(0,0,0,0.05);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 
                 text-align: center;
             }
+
             li:last-child {
                 border-bottom: 0;
             }

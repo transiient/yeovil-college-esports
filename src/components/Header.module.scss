@@ -17,37 +17,37 @@
 
     transition: $transition_time_link;
 
-    // .collapsibleNav gets pushed over by .ycLogo - this recenters it by offsetting the logo width
-    .collapsibleNav ul { margin-left: -64px; }
-    &.scrolled .collapsibleNav ul { margin-left: -48px; }
+    &.scrolled .collapsibleNav ul {
+        // Re-center on scroll, due to smaller .ycLogo
+        margin-left: -48px;
+    }
 
     .collapsibleNav {
         height: 100%;
         margin: 0 auto 0 auto;
-    
+
         ul {
             height: 100%;
-            transition: $transition_time_link;
-        }
-
-        ul li {
-            display: inline-block;
+            margin-left: -64px; // Re-center due to .ycLogo
 
             transition: $transition_time_link;
 
-            a {
-                height: 100%;
-                padding: 8px 16px;
+            li {
+                display: inline-block;
 
-                color: $color_white;
+                a {
+                    padding: 8px 16px;
 
-                cursor: pointer;
-                text-transform: uppercase;
-            }
+                    color: $color_white;
 
-            &:hover a {
-                background-color: $color_white;
-                color: $color_ycblue;
+                    cursor: pointer;
+                    text-transform: uppercase;
+                }
+
+                &:hover a {
+                    background-color: $color_white;
+                    color: $color_ycblue;
+                }
             }
         }
     }
@@ -67,6 +67,7 @@
         }
     }
 }
+
 .menuOpen {
     background-color: $color_ycblue;
 
@@ -74,14 +75,17 @@
         div {
             background-color: $color_white;
         }
+
         :global(#bar1) {
             width: 8px;
             margin-left: 16px;
         }
+
         :global(#bar2) {
             width: 16px;
             margin-left: 8px;
         }
+
         :global(#bar3) {
             width: 24px;
             margin-left: 0;
@@ -150,34 +154,40 @@
 
         transition: $transition_time_link;
     }
+
     :global(#bar2) {
         margin: 5px 0;
     }
 
     &:hover {
-        div {
-            background-color: $color_ycblue;
-        }
         :global(#bar1) {
             width: 24px;
             margin-left: 0;
         }
+
         :global(#bar2) {
             width: 16px;
             margin-left: 8px;
         }
+
         :global(#bar3) {
             width: 8px;
             margin-left: 16px;
+        }
+    }
+
+    &:active {
+        div {
+            background-color: lighten($color_ycblue, 20%);
         }
     }
 }
 
 @media only screen and (max-width: 840px) {
     .wrapper {
+        // Align logo and menu button to left and right edges
         justify-content: space-between;
 
-        // todo: clean up
         &.scrolled {
             background-color: $color_ycblue;
 
@@ -192,7 +202,9 @@
     }
 
     .collapsibleNav {
-        display: none;//todo: find more elegant solution which allows menu to slide down
+        // todo
+        // Find a solution allowing the menu to transition into view
+        display: none;
         max-height: 0;
     }
 }
