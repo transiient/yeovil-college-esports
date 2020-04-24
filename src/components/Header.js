@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link as SLink } from 'react-scroll';
 
 import cn from './Header.module.scss';
@@ -16,10 +16,10 @@ function NavLink(props) {
                 duration={600}
                 activeClass={cn.NavLinkInnerActive}
                 onClick={props.onClick}>
-                    {_children}
-                </SLink>
+                {_children}
+            </SLink>
         </li>
-    )
+    );
 }
 
 function CollapsibleNav(props) {
@@ -27,12 +27,11 @@ function CollapsibleNav(props) {
         <nav className={cn.collapsibleNav}>
             {props.children}
         </nav>
-    )
+    );
 }
 
 export default function Header(props) {
-    let _menuOpen = false;
-    // todo: consider moving this into state
+    let [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         function handleScroll(e) {
@@ -51,22 +50,22 @@ export default function Header(props) {
     }, []);
 
     function handleMenuButtonClick(e) {
-        if (!_menuOpen) {
+        if (!menuOpen) {
             document.getElementById('header')
                 .classList.add(cn.menuOpen);
-            _menuOpen = true;
+            setMenuOpen(true);
         } else {
             document.getElementById('header')
                 .classList.remove(cn.menuOpen);
-            _menuOpen = false;
+            setMenuOpen(false);
         }
     }
 
     function handleCloseMenu(e) {
-        if (_menuOpen) {
+        if (menuOpen) {
             document.getElementById('header')
                 .classList.remove(cn.menuOpen);
-            _menuOpen = false;
+            setMenuOpen(false);
         }
     }
 
@@ -82,14 +81,14 @@ export default function Header(props) {
 
             <CollapsibleNav>
                 <ul>
-                    <NavLink to={"section-home"}    onClick={handleCloseMenu}>Home</NavLink>
-                    <NavLink to={"section-course"}  onClick={handleCloseMenu}>Course</NavLink>
+                    <NavLink to={"section-home"} onClick={handleCloseMenu}>Home</NavLink>
+                    <NavLink to={"section-course"} onClick={handleCloseMenu}>Course</NavLink>
                     <NavLink to={"section-subject"} onClick={handleCloseMenu}>Subject</NavLink>
-                    <NavLink to={"section-deck"}    onClick={handleCloseMenu}>The Deck</NavLink>
+                    <NavLink to={"section-deck"} onClick={handleCloseMenu}>The Deck</NavLink>
                     <NavLink to={"section-college"} onClick={handleCloseMenu}>The College</NavLink>
-                    <NavLink to={"section-enrol"}   onClick={handleCloseMenu}>Enrol</NavLink>
+                    <NavLink to={"section-enrol"} onClick={handleCloseMenu}>Enrol</NavLink>
                 </ul>
             </CollapsibleNav>
         </header>
-    )
+    );
 }
