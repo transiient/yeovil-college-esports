@@ -10,7 +10,7 @@ export default () => {
                 href="https://fonts.googleapis.com/css?family=Fugaz+One|Nunito:400,700|Roboto:400,700&display=swap" />
             <link
                 rel="stylesheet"
-                href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+                href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" />
             <link
                 rel="stylesheet"
                 integrity="sha256-gvEnj2axkqIj4wbYhPjbWV7zttgpzBVEgHub9AAZQD4="
