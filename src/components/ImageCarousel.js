@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Carousel } from 'react-responsive-carousel';
 
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import './ImageCarousel.scss';
-
 function ImageCarousel(props) {
     const settings = {
         showArrows: true,

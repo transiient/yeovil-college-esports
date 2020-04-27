@@ -6,8 +6,7 @@ import classnames from 'classnames';
 import LinkButton from '../components/LinkButton';
 import ImageCarousel from '../components/ImageCarousel';
 
-import '../App.scss';
-import cn from './Home.module.scss';
+import cn from './index.module.scss';
 
 // Data
 import SubjectUnits from '../data/subjectUnits.json';
