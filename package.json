@@ -18,10 +18,11 @@
   },
   "scripts": {
     "start": "next",
-    "build": "next build",
-    "live": "next start",
-    "deploy": "gh-pages -d build",
-    "gh": "yarn build&&yarn deploy"
+    "nextbuild": "next build",
+    "nextserve": "next start",
+    "build": "next export",
+    "deploy": "gh-pages -d out",
+    "pages": "yarn build&&yarn deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
