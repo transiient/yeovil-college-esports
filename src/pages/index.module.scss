@@ -306,6 +306,12 @@
         .contentWrapper p {
             margin: 32px 0;
         }
+
+        .buttonContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
     }
 }
 
