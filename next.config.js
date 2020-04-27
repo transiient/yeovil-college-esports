@@ -3,7 +3,8 @@ const withImages = require('next-images');
 
 const debug = process.env.NODE_ENV !== 'production';
 
-const URL_ROOT = !debug ? '/yeovil-college-esports' : '';
+// Modify the true value VVVV if deploying to GitHub Pages
+const URL_ROOT = !debug ? '' : '';
 
 module.exports = withImages({
     exportPathMap: () => {
