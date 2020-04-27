@@ -100,14 +100,23 @@
     }
 
     .imageContainer {
+        //? A dirty workaround to force the image into its container
+        display: flex;
+        max-height: 320px;
         width: 100%;
 
-        img {
-            display: inline-block;
+        picture {
+            display: flex;
 
+            min-height: 0;
+            height: 100%;
             width: 100%;
-            max-height: 320px;
-            object-fit: cover;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
         }
     }
 
@@ -243,21 +252,33 @@
 
         transition: $transition_time_movement;
 
-        .linkButton a {
-            width: 100%;
+        .linkButton {
+            a {
+                width: 100%;
 
-            box-shadow: none;
-
-            &:hover {
                 box-shadow: none;
+
+                transition: $transition_time_movement;
+
+                &:hover {
+                    box-shadow: none;
+                }
             }
         }
 
-        img {
-            object-fit: cover;
-            min-height: 240px;
+        picture {
+            display: flex;
+            //? Setting min-height forces the picture element to become smaller,
+            //? making space for any .linkButton included inside the parent.
+            min-height: 0;
             height: 100%;
-            max-width: 100%;
+            width: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
         }
     }
 }

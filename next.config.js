@@ -1,12 +1,12 @@
 const webpack = require('webpack');
-const withImages = require('next-images');
+const withOptimizedImages = require('next-optimized-images');
 
 const debug = process.env.NODE_ENV !== 'production';
 
 // Modify the true value VVVV if deploying to GitHub Pages
 const URL_ROOT = !debug ? '' : '';
 
-module.exports = withImages({
+module.exports = withOptimizedImages({
     exportPathMap: () => {
         return {
             "/": { page: "/" }

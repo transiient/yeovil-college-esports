@@ -3,6 +3,7 @@ import PT from 'prop-types';
 import { Element, Link as SLink } from 'react-scroll';
 import classnames from 'classnames';
 
+import Image from '../components/Image';
 import LinkButton from '../components/LinkButton';
 import ImageCarousel from '../components/ImageCarousel';
 
@@ -10,18 +11,6 @@ import cn from './index.module.scss';
 
 // Data
 import SubjectUnits from '../data/subjectUnits.json';
-
-// Images
-import IMAGE_COURSE from '../assets/images/jefferson-santos-9SoCnyQmkzI-unsplash.jpg';
-import IMAGE_SUBJECT from '../assets/images/florian-olivo-Mf23RF8xArY-unsplash.jpg';
-import IMAGE_COLLEGE from '../assets/images/OCT-10-YCOLL-114-1024x683.jpg';
-// -- Deck
-import IMAGE_DECK_01 from '../assets/images/two-white-hyperx-ram-stick-2582928.jpg';
-import IMAGE_DECK_02 from '../assets/images/two-white-hyperx-ram-stick-2582928.jpg';
-import IMAGE_DECK_03 from '../assets/images/two-white-hyperx-ram-stick-2582928.jpg';
-import IMAGE_DECK_04 from '../assets/images/two-white-hyperx-ram-stick-2582928.jpg';
-import IMAGE_DECK_05 from '../assets/images/two-white-hyperx-ram-stick-2582928.jpg';
-import IMAGE_DECK_06 from '../assets/images/two-white-hyperx-ram-stick-2582928.jpg';
 
 function elementEntryEdge(el) {
     var rect = el.getBoundingClientRect();
@@ -160,8 +149,9 @@ export default function Home() {
             <Element id="section-course" name="section-course">
                 <div className={classnames(cn.heroWrapper, cn.heroImageLeft)}><div className={cn.heroContainer}>
                     <div className={cn.heroImageWrapper}>
-                        <img
-                            src={IMAGE_COURSE}
+                        <Image
+                            webp={require('../assets/images/jefferson-santos-9SoCnyQmkzI-unsplash.jpg?webp')}
+                            jpeg={require('../assets/images/jefferson-santos-9SoCnyQmkzI-unsplash.jpg')}
                             alt="People looking cheerful while examining work on a desk" />
 
                         <LinkButton
@@ -202,7 +192,10 @@ export default function Home() {
             <Element id="section-subject" name="section-subject">
                 <div className={classnames(cn.heroWrapper, cn.heroImageRight, cn.heroDark)}><div className={classnames(cn.heroContainer, cn.noBottomPadding)}>
                     <div className={cn.heroImageWrapper}>
-                        <img src={IMAGE_SUBJECT} alt="People looking cheerful while examining work on a desk" />
+                        <Image
+                            webp={require('../assets/images/florian-olivo-Mf23RF8xArY-unsplash.jpg?webp')}
+                            jpeg={require('../assets/images/florian-olivo-Mf23RF8xArY-unsplash.jpg')}
+                            alt="People looking cheerful while examining work on a desk" />
                     </div>
 
                     <div className={cn.sectionHeader}>
@@ -236,12 +229,26 @@ export default function Home() {
                             <ImageCarousel
                                 classNames={cn.imageCarousel}
                                 images={[
-                                    { source: IMAGE_DECK_01, altText: "a" },
-                                    { source: IMAGE_DECK_02, altText: "b" },
-                                    { source: IMAGE_DECK_03, altText: "c" },
-                                    { source: IMAGE_DECK_04, altText: "d" },
-                                    { source: IMAGE_DECK_05, altText: "e" },
-                                    { source: IMAGE_DECK_06, altText: "f" }
+                                    {
+                                        webp: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg?webp`),
+                                        jpeg: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg`),
+                                        altText: "Image - The Deck 01"
+                                    },
+                                    {
+                                        webp: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg?webp`),
+                                        jpeg: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg`),
+                                        altText: "Image - The Deck 02"
+                                    },
+                                    {
+                                        webp: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg?webp`),
+                                        jpeg: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg`),
+                                        altText: "Image - The Deck 03"
+                                    },
+                                    {
+                                        webp: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg?webp`),
+                                        jpeg: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg`),
+                                        altText: "Image - The Deck 04"
+                                    }
                                 ]}
                             />
                         </div>
@@ -270,7 +277,10 @@ export default function Home() {
 
                     <div className={classnames(cn.contentWrapper, cn.noTopMargin)}>
                         <div className={cn.imageContainer}>
-                            <img src={IMAGE_COLLEGE} alt="Yeovil College main reception" />
+                            <Image
+                                webp={require('../assets/images/OCT-10-YCOLL-114-1024x683.jpg?webp')}
+                                jpeg={require('../assets/images/OCT-10-YCOLL-114-1024x683.jpg')}
+                                alt="Yeovil College main reception" />
                         </div>
 
                         <p>

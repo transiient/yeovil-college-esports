@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Carousel } from 'react-responsive-carousel';
+import Image from './Image';
 
 function ImageCarousel(props) {
     const settings = {
@@ -22,7 +23,11 @@ function ImageCarousel(props) {
             <Carousel className="carousel" {...settings}>
                 {props.images.map((image) => (
                     <div key={image.altText}>
-                        <img src={image.source} alt={image.altText} />
+                        <Image
+                            webp={image.webp}
+                            jpeg={image.jpeg || null}
+                            png={image.png || null}
+                            alt={image.altText} />
                     </div>
                 ))}
             </Carousel>
