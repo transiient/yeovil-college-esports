@@ -21,7 +21,7 @@
     "build": "next build",
     "serve": "next start",
     "export": "next export",
-    "deploy": "gh-pages -d out",
+    "deploy": "echo. 2>./out/.nojekyll&&gh-pages -d out",
     "pages": "yarn build&&yarn export&&yarn deploy"
   },
   "eslintConfig": {
