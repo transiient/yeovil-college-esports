@@ -18,6 +18,7 @@ html {
             border: 2px solid $color_black;
         }
     }
+
     // Applies to nested scrollbars
     scrollbar-width: thin;
     scrollbar-color: $color_ycblue $color_black;
@@ -33,6 +34,9 @@ body {
 }
 
 * {
+    // Load with default fonts, then swap to Google Fonts once loaded
+    font-display: swap;
+
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* Internet Explorer/Edge */
