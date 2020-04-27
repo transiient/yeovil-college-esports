@@ -1,19 +1,22 @@
 # Esports at Yeovil College
 
-This website is a college assignment. It's built with React and uses SCSS modules for styling. It's fully responsive.
+This website is a college assignment. It's built on modern technologies with static page generation, and it's fully responsive.
 
-At some point in the future I hope to convert it to a static site (possibly using Gatsby) to drastically improve performance, but for now, it's working.
+## Tech Stack
+
+* React JS
+* Next JS
+* Netlify (deployments)
+* SCSS modules
+* @media queries
 
 ### Still to do...
 
-* Convert to static site
-* Images for carousel
 * Optimise images
-* Optimise styles
 
 ## Visit
 
-Visit the site at https://sam-cross.github.io/yeovil-college-esports
+[Visit the site](https://vigorous-joliot-ac4a95.netlify.app). It's hosted on Netlify, which means it's automatically re-deployed when changes are pushed to the `master` branch!
 
 ## Local Hosting
 
