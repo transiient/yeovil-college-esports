@@ -1,16 +1,26 @@
+const webpack = require('webpack');
 const withImages = require('next-images');
 
-const debug = process.env.NODE_ENV !== 'NODE_ENV_PRODUCTION';
+const debug = process.env.NODE_ENV !== 'production';
+
+const URL_ROOT = !debug ? '/yeovil-college-esports' : '';
 
 module.exports = withImages({
-    // exportPathMap: function () {
-    //     return {
-    //         "/": { page: "/" },
-    //         "/about": { page: "/about" },
-    //     };
-    // },
-    assetPrefix: !debug ? '/yeovil-college-esports/' : '',
+    exportPathMap: () => {
+        return {
+            "/": { page: "/" }
+        };
+    },
+    assetPrefix: URL_ROOT,
     webpack: (config, options) => {
+        console.log("Building webpack config...");
+
+        config.plugins.push(
+            new webpack.DefinePlugin({
+                'process.env.URL_ROOT': JSON.stringify(URL_ROOT)
+            })
+        );
+
         config.module.rules = config.module.rules.map(rule => {
             if (rule.loader === 'babel-loader') {
                 rule.options.cacheDirectory = false;

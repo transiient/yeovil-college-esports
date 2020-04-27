@@ -18,10 +18,10 @@
   },
   "scripts": {
     "start": "next",
-    "build": "set NODE_ENV_PRODUCTION=1&&next build",
+    "build": "set NODE_ENV=production&&next build",
     "serve": "next start",
     "export": "next export",
-    "deploy": "echo. 2>./out/.nojekyll&&gh-pages -d out",
+    "deploy": "echo. 2>./out/.nojekyll&&git subtree push --prefix out origin gh-pages",
     "pages": "yarn build&&yarn export&&yarn deploy"
   },
   "eslintConfig": {
