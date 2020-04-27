@@ -1,36 +1,84 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Carousel } from 'react-responsive-carousel';
 import Image from './Image';
 
+import cn from './ImageCarousel.module.scss';
+
 function ImageCarousel(props) {
-    const settings = {
-        showArrows: true,
-        showStatus: false,
-        infiniteLoop: true,
-        showThumbs: false,
-        autoPlay: true,
-        interval: 3000,
-        transitionTime: 400,
-        emulateTouch: true,
-        dynamicHeight: false,
-        statusFormatter: (c, t) => { return `Image ${c} of ${t}`; }
+    useEffect(() => {
+        // function removeFillClass() {
+        //     const carouselContainer = document.getElementsByClassName(cn.carousel)[0];
+
+        //     carouselContainer.classList.remove(cn.fill);
+        // }
+        // function addFillClass() {
+        //     const carouselContainer = document.getElementsByClassName(cn.carousel)[0];
+
+        //     carouselContainer.classList.add(cn.fill);
+
+        //     carouselContainer.addEventListener('pointerleave', removeFillClass);
+        //     window.addEventListener('scroll', removeFillClass);
+        // }
+        function toImage(index) {
+            const querySlide = document.getElementById(`carousel-slide-${index}`);
+            const slides = document.getElementsByClassName(cn.slides)[0];
+
+            // addFillClass();
+
+            slides.scrollTo({
+                left: querySlide.offsetLeft,
+                behavior: 'smooth'
+            });
+        }
+
+        const navContainer = document.getElementsByClassName(cn.nav)[0];
+        Array.from(navContainer.children).forEach((navButton) => {
+            navButton.addEventListener('click', () => toImage(navButton.innerHTML.match(/(?!>)(\d{1})(?=<)/)[0]));
+        });
+
+        return () => {
+            Array.from(navContainer.children).forEach((navButton => {
+                navButton.removeEventListener('click', () => { });
+            }));
+        };
+    });
+
+    const handleClick = (e) => {
+        e.preventDefault();
     };
 
     return (
         <div className={classnames(props.classNames || '')}>
-            <Carousel className="carousel" {...settings}>
-                {props.images.map((image) => (
-                    <div key={image.altText}>
-                        <Image
-                            webp={image.webp}
-                            jpeg={image.jpeg || null}
-                            png={image.png || null}
-                            alt={image.altText} />
-                    </div>
-                ))}
-            </Carousel>
+            <div className={cn.carousel}>
+                <div className={cn.nav}>
+                    {props.images.map((image, index) =>
+                        <a
+                            key={index + 1}
+                            href={`#carousel-slide-${index + 1}`}
+                            onClick={handleClick}>
+                            <b>{index + 1}</b>
+                        </a>
+                    )}
+                </div>
+                <div className={cn.slides}>
+                    {props.images.map((image, index) =>
+                        <div
+                            id={`carousel-slide-${index + 1}`}
+                            key={index}>
+                            <div className={cn.caption}>
+                                {image.altText}
+                            </div>
+
+                            <Image
+                                webp={image.webp}
+                                jpeg={image.jpeg || null}
+                                png={image.png || null}
+                                alt={image.altText} />
+                        </div>
+                    )}
+                </div>
+            </div>
         </div>
     );
 }

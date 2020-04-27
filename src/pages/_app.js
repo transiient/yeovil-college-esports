@@ -7,7 +7,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 // -- Custom CSS --
 import '../App.scss';
-import '../components/ImageCarousel.scss';
 
 export default function App({ Component, pageProps }) {
     return (

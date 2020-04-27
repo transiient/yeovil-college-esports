@@ -225,29 +225,29 @@ export default function Home() {
                     </div>
 
                     <div className={classnames(cn.contentWrapper, cn.noTopMargin)}>
-                        <div className={cn.imageContainer}>
+                        <div className={`${cn.imageContainer} ${cn.large}`}>
                             <ImageCarousel
-                                classNames={cn.imageCarousel}
+                                classNames={`${cn.imageCarousel}`}
                                 images={[
                                     {
-                                        webp: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg?webp`),
-                                        jpeg: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg`),
-                                        altText: "Image - The Deck 01"
+                                        webp: require(`../assets/images/constant-loubier-7lzIyp2Ork4-unsplash.jpg?webp`),
+                                        jpeg: require(`../assets/images/constant-loubier-7lzIyp2Ork4-unsplash.jpg`),
+                                        altText: "6 blazing-fast computers ready for game development and testing"
                                     },
                                     {
-                                        webp: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg?webp`),
-                                        jpeg: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg`),
-                                        altText: "Image - The Deck 02"
+                                        webp: require(`../assets/images/photo-of-person-typing-on-computer-keyboard-735911.jpg?webp`),
+                                        jpeg: require(`../assets/images/photo-of-person-typing-on-computer-keyboard-735911.jpg`),
+                                        altText: "Our new state-of-the-art systems are located in The Deck"
                                     },
                                     {
-                                        webp: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg?webp`),
-                                        jpeg: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg`),
-                                        altText: "Image - The Deck 03"
+                                        webp: require(`../assets/images/jodyhongfilms-sI1mbxJFFpU-unsplash.jpg?webp`),
+                                        jpeg: require(`../assets/images/jodyhongfilms-sI1mbxJFFpU-unsplash.jpg`),
+                                        altText: "Yeovil College has an A-Level pass rate of 100%"
                                     },
                                     {
-                                        webp: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg?webp`),
-                                        jpeg: require(`../assets/images/two-white-hyperx-ram-stick-2582928.jpg`),
-                                        altText: "Image - The Deck 04"
+                                        webp: require(`../assets/images/emmanuel-WcrqKjgMPfI-unsplash.jpg?webp`),
+                                        jpeg: require(`../assets/images/emmanuel-WcrqKjgMPfI-unsplash.jpg`),
+                                        altText: "Visit The Deck to work on game development projects during your break"
                                     }
                                 ]}
                             />

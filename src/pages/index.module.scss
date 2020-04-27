@@ -104,6 +104,11 @@
         display: flex;
         max-height: 320px;
         width: 100%;
+        max-width: 1280px;
+
+        &.large {
+            max-height: 640px;
+        }
 
         picture {
             display: flex;
@@ -417,12 +422,11 @@ ul.flexRelevantUnits {
 }
 
 .imageCarousel {
-    height: auto;
-    width: calc(100vw - 32px);
+    min-height: 0;
     max-height: 480px;
-    max-width: 720px;
+    width: 100%;
 
-    margin: auto;
+    margin: 0;
     overflow: hidden;
 }
 
