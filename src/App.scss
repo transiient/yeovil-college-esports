@@ -1,34 +1,37 @@
 @import "./Variables.scss";
 
 html {
-    // Scrollbar Styles
-    //  Custom page scrollbar only displayed on devices above
-    //  $media_screen_max_width, otherwise the bar takes up
-    //  space on the page, and it feels cluttered.
-    @media only screen and (min-width: $media_screen_max_width) {
-        &::-webkit-scrollbar {
-            width: 11px;
-        }
-        &::-webkit-scrollbar-track {
-            background-color: $color_black;
-        }
-        &::-webkit-scrollbar-thumb {
-            background-color: $color_ycblue;
-            border-radius: 4px;
-            border: 2px solid $color_black;
-        }
-    }
-
-    // Applies to nested scrollbars
-    scrollbar-width: thin;
-    scrollbar-color: $color_ycblue $color_black;
 }
 
 body {
     overflow-x: hidden; //! remove X-axis scrollbar, idk why it's there anyway
 
     font-family: $fonts_body;
-    font-size: 16px;
+    font-size: 16px; // Scrollbar Styles
+    //  Custom page scrollbar only displayed on devices above
+    //  $media_screen_max_width, otherwise the bar takes up
+    //  space on the page, and it feels cluttered.
+    @media only screen and (min-width: $media_screen_max_width) {
+        &::-webkit-scrollbar {
+            width: 12px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: $color_black;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: $color_ycblue;
+            border: 2px solid $color_black;
+
+            &:hover {
+                background-color: lighten($color_ycblue, 5%);
+            }
+        }
+    }
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: thin;
+    scrollbar-color: $color_ycblue $color_black;
 
     background-color: $color_white;
 }

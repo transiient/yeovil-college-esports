@@ -100,28 +100,20 @@
     }
 
     .imageContainer {
-        //? A dirty workaround to force the image into its container
-        display: flex;
-        max-height: 320px;
+        height: 320px;
         width: 100%;
+
         max-width: 1280px;
 
         &.large {
-            max-height: 640px;
+            height: 640px;
         }
 
-        picture {
-            display: flex;
-
-            min-height: 0;
+        picture img {
             height: 100%;
             width: 100%;
 
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
+            object-fit: cover;
         }
     }
 
@@ -249,13 +241,29 @@
         align-items: stretch;
         justify-content: flex-start;
 
-        max-height: 320px;
+        height: 320px;
         width: 100%;
         margin: -64px 0 0 0; // margin: 0; pins element edges to parent edges
 
         box-shadow: 0 0 16px rgba(0, 0, 0, 0.4);
 
         transition: $transition_time_movement;
+
+        picture {
+            //? Cut off the bottom of the image if a button is displayed instead
+            // DO NOT remove the next line. This took 20 minutes of my time to debug.
+            overflow: hidden;
+
+            height: 100%;
+            width: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+
+                object-fit: cover;
+            }
+        }
 
         .linkButton {
             a {
@@ -268,21 +276,6 @@
                 &:hover {
                     box-shadow: none;
                 }
-            }
-        }
-
-        picture {
-            display: flex;
-            //? Setting min-height forces the picture element to become smaller,
-            //? making space for any .linkButton included inside the parent.
-            min-height: 0;
-            height: 100%;
-            width: 100%;
-
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
             }
         }
     }
@@ -425,15 +418,6 @@ ul.flexRelevantUnits {
             }
         }
     }
-}
-
-.imageCarousel {
-    min-height: 0;
-    max-height: 480px;
-    width: 100%;
-
-    margin: 0;
-    overflow: hidden;
 }
 
 @media only screen and (max-width: $media_screen_max_width) {

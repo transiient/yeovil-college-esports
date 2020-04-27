@@ -227,7 +227,6 @@ export default function Home() {
                     <div className={classnames(cn.contentWrapper, cn.noTopMargin)}>
                         <div className={`${cn.imageContainer} ${cn.large}`}>
                             <ImageCarousel
-                                classNames={`${cn.imageCarousel}`}
                                 images={[
                                     {
                                         webp: require(`../assets/images/constant-loubier-7lzIyp2Ork4-unsplash.jpg?webp`),

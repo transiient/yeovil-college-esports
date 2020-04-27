@@ -49,35 +49,33 @@ function ImageCarousel(props) {
     };
 
     return (
-        <div className={classnames(props.classNames || '')}>
-            <div className={cn.carousel}>
-                <div className={cn.nav}>
-                    {props.images.map((image, index) =>
-                        <a
-                            key={index + 1}
-                            href={`#carousel-slide-${index + 1}`}
-                            onClick={handleClick}>
-                            <b>{index + 1}</b>
-                        </a>
-                    )}
-                </div>
-                <div className={cn.slides}>
-                    {props.images.map((image, index) =>
-                        <div
-                            id={`carousel-slide-${index + 1}`}
-                            key={index}>
-                            <div className={cn.caption}>
-                                {image.altText}
-                            </div>
-
-                            <Image
-                                webp={image.webp}
-                                jpeg={image.jpeg || null}
-                                png={image.png || null}
-                                alt={image.altText} />
+        <div className={`${cn.carousel} ${props.classNames || ''}`}>
+            <div className={cn.nav}>
+                {props.images.map((image, index) =>
+                    <a
+                        key={index + 1}
+                        href={`#carousel-slide-${index + 1}`}
+                        onClick={handleClick}>
+                        <b>{index + 1}</b>
+                    </a>
+                )}
+            </div>
+            <div className={cn.slides}>
+                {props.images.map((image, index) =>
+                    <div
+                        id={`carousel-slide-${index + 1}`}
+                        key={index}>
+                        <div className={cn.caption}>
+                            {image.altText}
                         </div>
-                    )}
-                </div>
+
+                        <Image
+                            webp={image.webp}
+                            jpeg={image.jpeg || null}
+                            png={image.png || null}
+                            alt={image.altText} />
+                    </div>
+                )}
             </div>
         </div>
     );
