@@ -404,6 +404,18 @@ ul.flexRelevantUnits {
                 transform: scale(0.9);
 
                 transition: $transition_time_link;
+
+                ul {
+                    width: 100%;
+
+                    li {
+                        margin: 8px 16px;
+
+                        &:last-child {
+                            border: none;
+                        }
+                    }
+                }
             }
 
             &:hover {
