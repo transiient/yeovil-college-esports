@@ -159,7 +159,7 @@ export default function Home() {
                             newtab
                             href="http://yeovil.ac.uk/our-courses/?coursess=esports"
                             colour="blue">
-                            Enrol - Save your place
+                            Enrol now to save your place
                         </LinkButton>
                     </div>
 
@@ -286,7 +286,13 @@ export default function Home() {
                             We offer a <b className="blue">digital-first approach</b> to learning, making our college the best option for the BTEC National in Esports. An advanced computer lab, various campus facilities, and opportunities for extra-curricular learning allow all students to achieve their potential and succeed in their future career.
                         </p>
 
-                        <LinkButton classNames={cn.linkButton} newtab href="https://www.yeovil.ac.uk/student-life/your-space/" colour="blue">Why Yeovil College?</LinkButton>
+                        <LinkButton
+                            classNames={cn.linkButton}
+                            newtab
+                            href="https://www.yeovil.ac.uk/student-life/your-space/"
+                            colour="blue">
+                            Why Yeovil College?
+                        </LinkButton>
                     </div>
                 </div></div>
             </Element>
@@ -307,14 +313,14 @@ export default function Home() {
                             <LinkButton
                                 classNames={classnames(cn.linkButton, "colourWhite")}
                                 newtab
-                                href="https://www.yeovil.ac.uk/student-life/your-space/"
+                                href="http://yeovil.ac.uk/our-courses/?coursess=esports"
                                 colour="white">
                                 Enrol Now
                             </LinkButton>
                             <LinkButton
                                 classNames={classnames(cn.linkButton, "colourWhite")}
                                 newtab
-                                href="https://www.yeovil.ac.uk/student-life/your-space/"
+                                href="http://yeovil.ac.uk/our-courses/?coursess=esports"
                                 colour="white">
                                 More Info
                             </LinkButton>
