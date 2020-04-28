@@ -10,13 +10,9 @@ This website is a college assignment. It's built on modern technologies with sta
 * SCSS modules
 * @media queries
 
-### Still to do...
-
-* Optimise images
-
 ## Visit
 
-[Visit the site](https://vigorous-joliot-ac4a95.netlify.app). It's hosted on Netlify, which means it's automatically re-deployed when changes are pushed to the `master` branch!
+[Visit the site](https://vigorous-joliot-ac4a95.netlify.app). It's hosted on Netlify, which means it's automatically re-deployed when changes are pushed to the `master` branch! A `develop` branch exists for testing purposes.
 
 ## Local Hosting
 
