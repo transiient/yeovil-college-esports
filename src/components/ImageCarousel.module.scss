@@ -5,6 +5,8 @@
     height: 100%;
     width: 100%;
 
+    overflow: hidden;
+
     transition: $transition_time_movement;
 
     .nav {
@@ -12,7 +14,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: flex-end;
+        align-items: flex-start;
         justify-content: center;
         z-index: 2;
 
@@ -20,6 +22,8 @@
         left: 0;
 
         width: 100%;
+
+        transition: $transition_time_movement;
 
         a {
             margin: 8px 8px 0 8px;
@@ -51,7 +55,7 @@
         a {
             height: auto;
             margin: 8px;
-            padding: 12px 16px;
+            padding: 12px 16px; // causes page to jump if user scrolled within carousel
         }
 
         b {
@@ -133,23 +137,4 @@
             }
         }
     }
-
-    // todo: fill page when image is clicked
-    // &.fill {
-    //     position: fixed;
-    //     z-index: 21;
-    //     top: 0;
-    //     left: 0;
-
-    //     height: calc(100% - 160px); // - margin - header
-    //     width: calc(100% - 64px); // - margin
-
-    //     box-sizing: border-box;
-
-    //     margin: 80px 32px;
-
-    //     .slides div .caption {
-    //         opacity: 0;
-    //     }
-    // }
 }

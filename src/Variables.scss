@@ -4,16 +4,17 @@ $color_background: #fafafa;
 $color_white: #fafafa;
 $color_black: #191919;
 $color_grey: #dadada;
-$color_grey_dark: rgb(116, 117, 136);
+$color_grey_dark: #84858f;
 $color_ycblue: #21447c;
 $color_purple: #736eab;
 $color_teal: #27c9a2;
 
-$color_green: #56d763;
-$color_lilac: #a952d1;
-$color_orange: #ec712c;
-$color_blue: #5f6deb;
-$color_brown: #be4e1e;
+// All colours below pass WCAG AAA contrast standards against #191919
+$color_green: #77df81;
+$color_lilac: #dd85ef;
+$color_orange: #f9816c;
+$color_blue: #7ba5ea;
+$color_grey2: #abb4c4;
 
 $transition_time_link: 0.14s;
 $transition_time_movement: 0.19s;

@@ -17,7 +17,7 @@
 }
 
 .bgOverlayBlack {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.82);
 }
 
 .bgOverlayBlue {
@@ -106,7 +106,8 @@
         max-width: 1280px;
 
         &.large {
-            height: 640px;
+            min-height: 480px;
+            height: 80vh;
         }
 
         picture img {
@@ -350,7 +351,7 @@ ul.flexRelevantUnits {
 
         text-align: center;
 
-        color: white;
+        color: $color_foreground;
 
         &.fruGreen {
             background-color: $color_green;
@@ -368,8 +369,8 @@ ul.flexRelevantUnits {
             background-color: $color_blue;
         }
 
-        &.fruBrown {
-            background-color: $color_brown;
+        &.fruGrey {
+            background-color: $color_grey2;
         }
 
         h4 {
@@ -379,6 +380,8 @@ ul.flexRelevantUnits {
         p {
             padding: 0 16px 0 16px;
             margin: 0;
+
+            color: $color_foreground;
         }
 
         .fruContainer {
